@@ -4,7 +4,86 @@
 
 ### 🌊 Animated Flow Network Evolution 🌊
 
-<svg width="650" height="280" viewBox="0 0 650 280" xmlns="http://www.w3.org/2000/svg">
+<div align="center">
+<style>
+@keyframes flow1 { 0% { transform: translateY(-200px); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(150px); opacity: 0; } }
+@keyframes flow2 { 0% { transform: translateX(-200px) translateY(-200px); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateX(100px) translateY(150px); opacity: 0; } }
+@keyframes flow3 { 0% { transform: translateX(200px) translateY(-200px); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateX(-100px) translateY(150px); opacity: 0; } }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 5px rgba(0,204,153,0.5); } 50% { box-shadow: 0 0 15px rgba(0,204,153,1); } }
+
+.flow-container { position: relative; width: 100%; height: 300px; margin: 20px auto; }
+.gen-box { display: inline-block; width: 30%; height: 100%; position: relative; margin: 0 1.5%; vertical-align: top; }
+.source { width: 14px; height: 14px; background: #00ff00; border-radius: 50%; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); border: 2px solid #00aa00; }
+.channel { width: 3px; background: #0066ff; position: absolute; left: 50%; transform: translateX(-50%); }
+.sink { width: 12px; height: 12px; background: #ff0000; border-radius: 50%; position: absolute; bottom: 20px; border: 2px solid #aa0000; }
+.junction { width: 10px; height: 10px; background: #00cc99; border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); border: 2px solid #0099cc; animation: pulse 2s infinite; }
+.particle { width: 6px; height: 6px; background: #ff3333; border-radius: 50%; position: absolute; left: 50%; }
+.gen1-channel { top: 34px; height: 160px; }
+.gen2-channel { top: 34px; height: 80px; }
+.gen2-left { top: 120px; height: 80px; left: 30%; width: 40px; transform: rotate(-45deg) translateX(-50%); }
+.gen2-right { top: 120px; height: 80px; left: 70%; width: 40px; transform: rotate(45deg) translateX(-50%); }
+.gen1-sink { left: 50%; bottom: 20px; }
+.gen2-left-sink { left: 20%; }
+.gen2-right-sink { right: 20%; }
+.gen3-sink-1 { left: 15%; }
+.gen3-sink-2 { left: 35%; }
+.gen3-sink-3 { left: 65%; }
+.gen3-sink-4 { right: 15%; }
+.p1 { animation: flow1 3s infinite; }
+.p2 { animation: flow2 3s infinite 0.5s; }
+.p3 { animation: flow3 3s infinite 1s; }
+.label { font-weight: bold; font-size: 14px; color: #333; margin-top: 10px; }
+.sublabel { font-size: 11px; color: #666; }
+</style>
+
+<div class="flow-container">
+  <!-- GEN 1 -->
+  <div class="gen-box">
+    <div class="source"></div>
+    <div class="channel gen1-channel"></div>
+    <div class="particle p1" style="top: 30px;"></div>
+    <div class="sink gen1-sink"></div>
+    <div class="label">Gen 1</div>
+    <div class="sublabel">Random</div>
+  </div>
+  
+  <!-- GEN 2 -->
+  <div class="gen-box">
+    <div class="source"></div>
+    <div class="channel gen2-channel"></div>
+    <div class="junction" style="top: 120px;"></div>
+    <div class="channel gen2-left"></div>
+    <div class="channel gen2-right"></div>
+    <div class="particle p2" style="top: 34px;"></div>
+    <div class="sink" style="left: 20%; bottom: 20px;"></div>
+    <div class="sink" style="right: 20%; bottom: 20px;"></div>
+    <div class="label">Gen 2</div>
+    <div class="sublabel">Branching</div>
+  </div>
+  
+  <!-- GEN 3 -->
+  <div class="gen-box">
+    <div class="source"></div>
+    <div class="channel gen2-channel"></div>
+    <div class="junction" style="top: 120px;"></div>
+    <div class="particle p3" style="top: 34px;"></div>
+    <div class="junction" style="top: 160px; left: 30%;"></div>
+    <div class="junction" style="top: 160px; left: 70%;"></div>
+    <!-- Level 3 channels would go here -->
+    <div class="sink gen3-sink-1" style="bottom: 20px;"></div>
+    <div class="sink gen3-sink-2" style="bottom: 20px;"></div>
+    <div class="sink gen3-sink-3" style="bottom: 20px;"></div>
+    <div class="sink gen3-sink-4" style="bottom: 20px;"></div>
+    <div class="label">Gen 3</div>
+    <div class="sublabel">Optimized ⭐</div>
+  </div>
+</div>
+
+**Particles flowing through generations → Network evolves for minimum resistance** 🌊
+
+</div>
+
+<svg style="display: none;" width="650" height="280" viewBox="0 0 650 280" xmlns="http://www.w3.org/2000/svg">
   <!-- GENERATION 1: Simple Path -->
   <g id="gen1">
     <!-- Source -->
