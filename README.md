@@ -6,7 +6,7 @@
 
 <div align="center">
 
-![Network Evolution Animation](network_evolution.gif)
+
 
 **Red particles flowing through 3 generations → Network evolves for minimum resistance** 🌊
 
