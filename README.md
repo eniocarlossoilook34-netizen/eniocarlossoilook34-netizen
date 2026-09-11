@@ -4,68 +4,111 @@
 
 ### 🌊 Animated Flow Network Evolution 🌊
 
-<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background: rgba(10,25,47,0.05); border-radius: 10px;">
-  <defs>
-    <style>
-      @keyframes flowParticle1 { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
-      @keyframes flowParticle2 { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
-      @keyframes flowParticle3 { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
-      @keyframes pulse { 0%, 100% { r: 5; opacity: 1; } 50% { r: 8; opacity: 0.6; } }
-      @keyframes glow { 0%, 100% { stroke-width: 1; } 50% { stroke-width: 3; } }
-      
-      .pipe { stroke: #0066cc; stroke-width: 3; fill: none; }
-      .node { fill: #00cc99; }
-      .particle { fill: #ff6b6b; }
-      .source { fill: #00ff00; }
-      .sink { fill: #ff0000; }
-    </style>
-    
-    <path id="path1" d="M 50 50 L 150 150 L 250 50" class="pipe" />
-    <path id="path2" d="M 150 150 L 300 150 L 450 50" class="pipe" />
-    <path id="path3" d="M 150 150 L 300 150 L 450 250" class="pipe" />
-  </defs>
+<svg width="650" height="280" viewBox="0 0 650 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- GENERATION 1: Simple Path -->
+  <g id="gen1">
+    <!-- Source -->
+    <circle cx="80" cy="60" r="8" fill="#00ff00" stroke="#00aa00" stroke-width="2"/>
+    <!-- Main channel -->
+    <line x1="80" y1="68" x2="80" y2="200" stroke="#0066ff" stroke-width="4"/>
+    <!-- Animated particle 1 -->
+    <circle r="4" fill="#ff3333">
+      <animate attributeName="cy" values="68;200;68" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Sink -->
+    <circle cx="80" cy="215" r="8" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <!-- Label -->
+    <text x="80" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Gen 1</text>
+    <text x="80" y="268" text-anchor="middle" font-size="11" fill="#666">Random</text>
+  </g>
   
-  <!-- Generation 1: Source to Sink -->
-  <circle cx="50" cy="50" r="6" class="source" />
-  <line x1="50" y1="50" x2="50" y2="250" stroke="#0066cc" stroke-width="3" />
-  <circle cx="50" cy="250" r="6" class="sink" />
+  <!-- GENERATION 2: Branching Network -->
+  <g id="gen2">
+    <!-- Source -->
+    <circle cx="240" cy="60" r="8" fill="#00ff00" stroke="#00aa00" stroke-width="2"/>
+    <!-- Main stem -->
+    <line x1="240" y1="68" x2="240" y2="130" stroke="#0066ff" stroke-width="4"/>
+    <!-- Junction node (pulsing) -->
+    <circle cx="240" cy="140" r="6" fill="#00cc99" stroke="#0099cc" stroke-width="2">
+      <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Left branch -->
+    <line x1="240" y1="146" x2="180" y2="200" stroke="#0066ff" stroke-width="3"/>
+    <!-- Right branch -->
+    <line x1="240" y1="146" x2="300" y2="200" stroke="#0066ff" stroke-width="3"/>
+    <!-- Animated particles on branches -->
+    <circle r="4" fill="#ff3333">
+      <animate attributeName="x" values="240;180" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="140;200" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#ff6666">
+      <animate attributeName="x" values="240;300" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="y" values="140;200" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <!-- Sinks -->
+    <circle cx="180" cy="215" r="7" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <circle cx="300" cy="215" r="7" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <!-- Label -->
+    <text x="240" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Gen 2</text>
+    <text x="240" y="268" text-anchor="middle" font-size="11" fill="#666">Branching</text>
+  </g>
   
-  <!-- Generation 2: Branching -->
-  <circle cx="150" cy="50" r="6" class="source" />
-  <line x1="150" y1="50" x2="150" y2="150" stroke="#0066cc" stroke-width="3" />
-  <circle cx="150" cy="150" r="6" class="node" style="animation: pulse 2s infinite;" />
-  <line x1="150" y1="150" x2="200" y2="200" stroke="#0066cc" stroke-width="2" />
-  <line x1="150" y1="150" x2="200" y2="100" stroke="#0066cc" stroke-width="2" />
-  <circle cx="200" cy="200" r="5" class="sink" style="animation: pulse 2s infinite 0.5s;" />
-  <circle cx="200" cy="100" r="5" class="sink" style="animation: pulse 2s infinite 1s;" />
+  <!-- GENERATION 3: Optimized (Constructal) -->
+  <g id="gen3">
+    <!-- Source -->
+    <circle cx="400" cy="60" r="8" fill="#00ff00" stroke="#00aa00" stroke-width="2"/>
+    <!-- Level 1 -->
+    <line x1="400" y1="68" x2="400" y2="110" stroke="#0066ff" stroke-width="5"/>
+    <circle cx="400" cy="120" r="6" fill="#00cc99" stroke="#0099cc" stroke-width="2">
+      <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Level 2 branches -->
+    <line x1="400" y1="126" x2="340" y2="155" stroke="#0066ff" stroke-width="4"/>
+    <line x1="400" y1="126" x2="460" y2="155" stroke="#0066ff" stroke-width="4"/>
+    <!-- Level 2 junctions -->
+    <circle cx="340" cy="160" r="5" fill="#00cc99" stroke="#0099cc" stroke-width="2">
+      <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" begin="0.33s"/>
+    </circle>
+    <circle cx="460" cy="160" r="5" fill="#00cc99" stroke="#0099cc" stroke-width="2">
+      <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" begin="0.66s"/>
+    </circle>
+    <!-- Level 3 micro-branches -->
+    <line x1="340" y1="165" x2="310" y2="200" stroke="#0066ff" stroke-width="2.5"/>
+    <line x1="340" y1="165" x2="370" y2="200" stroke="#0066ff" stroke-width="2.5"/>
+    <line x1="460" y1="165" x2="430" y2="200" stroke="#0066ff" stroke-width="2.5"/>
+    <line x1="460" y1="165" x2="490" y2="200" stroke="#0066ff" stroke-width="2.5"/>
+    <!-- Animated particles flowing down -->
+    <circle r="3" fill="#ff3333">
+      <animate attributeName="x" values="400;310" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="68;200" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#ff6666">
+      <animate attributeName="x" values="400;370" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="y" values="68;200" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle r="3" fill="#ffaaaa">
+      <animate attributeName="x" values="400;430" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="y" values="68;200" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle r="3" fill="#ffcccc">
+      <animate attributeName="x" values="400;490" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="y" values="68;200" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <!-- Sinks -->
+    <circle cx="310" cy="215" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <circle cx="370" cy="215" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <circle cx="430" cy="215" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <circle cx="490" cy="215" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="2"/>
+    <!-- Label -->
+    <text x="400" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Gen 3</text>
+    <text x="400" y="268" text-anchor="middle" font-size="11" fill="#666">Optimized ⭐</text>
+  </g>
   
-  <!-- Generation 3: Optimized -->
-  <circle cx="300" cy="50" r="6" class="source" />
-  <line x1="300" y1="50" x2="300" y2="100" stroke="#0066cc" stroke-width="3" />
-  <circle cx="300" cy="100" r="6" class="node" style="animation: pulse 2s infinite;" />
-  <line x1="300" y1="100" x2="350" y2="75" stroke="#0066cc" stroke-width="2.5" />
-  <line x1="300" y1="100" x2="350" y2="125" stroke="#0066cc" stroke-width="2.5" />
-  <circle cx="350" cy="75" r="5" class="node" style="animation: pulse 2s infinite 0.33s;" />
-  <circle cx="350" cy="125" r="5" class="node" style="animation: pulse 2s infinite 0.66s;" />
-  <line x1="350" y1="75" x2="400" y2="60" stroke="#0066cc" stroke-width="2" />
-  <line x1="350" y1="75" x2="400" y2="90" stroke="#0066cc" stroke-width="2" />
-  <line x1="350" y1="125" x2="400" y2="110" stroke="#0066cc" stroke-width="2" />
-  <line x1="350" y1="125" x2="400" y2="140" stroke="#0066cc" stroke-width="2" />
-  <circle cx="400" cy="60" r="4" class="sink" style="animation: pulse 2s infinite 1s;" />
-  <circle cx="400" cy="90" r="4" class="sink" style="animation: pulse 2s infinite 1.33s;" />
-  <circle cx="400" cy="110" r="4" class="sink" style="animation: pulse 2s infinite 1.66s;" />
-  <circle cx="400" cy="140" r="4" class="sink" style="animation: pulse 2s infinite 2s;" />
-  
-  <!-- Animated flow particles -->
-  <circle cx="0" cy="0" r="3" class="particle" style="offset-path: path('M 50 50 L 150 150 L 250 50'); animation: flowParticle1 3s infinite linear;" />
-  <circle cx="0" cy="0" r="3" class="particle" style="offset-path: path('M 150 150 L 300 150 L 450 50'); animation: flowParticle2 4s infinite linear 0.5s;" />
-  <circle cx="0" cy="0" r="3" class="particle" style="offset-path: path('M 150 150 L 300 150 L 450 250'); animation: flowParticle3 4s infinite linear 1s;" />
-  
-  <!-- Labels -->
-  <text x="50" y="280" font-size="12" text-anchor="middle" fill="#0066cc">Gen 1</text>
-  <text x="200" y="280" font-size="12" text-anchor="middle" fill="#0066cc">Gen 2</text>
-  <text x="400" y="280" font-size="12" text-anchor="middle" fill="#0066cc">Gen 3</text>
-  <text x="300" y="20" font-size="14" font-weight="bold" text-anchor="middle" fill="#00cc99">Network Evolution → Minimum Resistance</text>
+  <!-- Title -->
+  <text x="325" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#0066ff">🌊 Constructal Law: Network Evolution 🌊</text>
+  <text x="325" y="48" text-anchor="middle" font-size="12" fill="#00cc99">Particles flowing through evolving networks → Minimum resistance</text>
 </svg>
 
 ---
