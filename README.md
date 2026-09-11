@@ -2,14 +2,6 @@
 
 <div align="center">
 
-### 🌊 Animated Flow Network Evolution 🌊
-
-<div align="center">
-
-
-
-**Red particles flowing through 3 generations → Network evolves for minimum resistance** 🌊
-
 </div>
   <!-- GENERATION 1: Simple Path -->
   <g id="gen1">
