@@ -2,31 +2,73 @@
 
 <div align="center">
 
-```
-    ╔════════════════════════════════════════════════════════════════╗
-    ║                                                                ║
-    ║        ~~ FLOW NETWORK EVOLUTION ~~                           ║
-    ║                                                                ║
-    ║  Networks evolve to provide easier access to flow currents    ║
-    ║                   — Constructal Law                            ║
-    ║                                                                ║
-    ╚════════════════════════════════════════════════════════════════╝
-```
+### 🌊 Animated Flow Network Evolution 🌊
 
-### Laminar Flow Evolution
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="background: rgba(10,25,47,0.05); border-radius: 10px;">
+  <defs>
+    <style>
+      @keyframes flowParticle1 { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
+      @keyframes flowParticle2 { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
+      @keyframes flowParticle3 { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
+      @keyframes pulse { 0%, 100% { r: 5; opacity: 1; } 50% { r: 8; opacity: 0.6; } }
+      @keyframes glow { 0%, 100% { stroke-width: 1; } 50% { stroke-width: 3; } }
+      
+      .pipe { stroke: #0066cc; stroke-width: 3; fill: none; }
+      .node { fill: #00cc99; }
+      .particle { fill: #ff6b6b; }
+      .source { fill: #00ff00; }
+      .sink { fill: #ff0000; }
+    </style>
+    
+    <path id="path1" d="M 50 50 L 150 150 L 250 50" class="pipe" />
+    <path id="path2" d="M 150 150 L 300 150 L 450 50" class="pipe" />
+    <path id="path3" d="M 150 150 L 300 150 L 450 250" class="pipe" />
+  </defs>
+  
+  <!-- Generation 1: Source to Sink -->
+  <circle cx="50" cy="50" r="6" class="source" />
+  <line x1="50" y1="50" x2="50" y2="250" stroke="#0066cc" stroke-width="3" />
+  <circle cx="50" cy="250" r="6" class="sink" />
+  
+  <!-- Generation 2: Branching -->
+  <circle cx="150" cy="50" r="6" class="source" />
+  <line x1="150" y1="50" x2="150" y2="150" stroke="#0066cc" stroke-width="3" />
+  <circle cx="150" cy="150" r="6" class="node" style="animation: pulse 2s infinite;" />
+  <line x1="150" y1="150" x2="200" y2="200" stroke="#0066cc" stroke-width="2" />
+  <line x1="150" y1="150" x2="200" y2="100" stroke="#0066cc" stroke-width="2" />
+  <circle cx="200" cy="200" r="5" class="sink" style="animation: pulse 2s infinite 0.5s;" />
+  <circle cx="200" cy="100" r="5" class="sink" style="animation: pulse 2s infinite 1s;" />
+  
+  <!-- Generation 3: Optimized -->
+  <circle cx="300" cy="50" r="6" class="source" />
+  <line x1="300" y1="50" x2="300" y2="100" stroke="#0066cc" stroke-width="3" />
+  <circle cx="300" cy="100" r="6" class="node" style="animation: pulse 2s infinite;" />
+  <line x1="300" y1="100" x2="350" y2="75" stroke="#0066cc" stroke-width="2.5" />
+  <line x1="300" y1="100" x2="350" y2="125" stroke="#0066cc" stroke-width="2.5" />
+  <circle cx="350" cy="75" r="5" class="node" style="animation: pulse 2s infinite 0.33s;" />
+  <circle cx="350" cy="125" r="5" class="node" style="animation: pulse 2s infinite 0.66s;" />
+  <line x1="350" y1="75" x2="400" y2="60" stroke="#0066cc" stroke-width="2" />
+  <line x1="350" y1="75" x2="400" y2="90" stroke="#0066cc" stroke-width="2" />
+  <line x1="350" y1="125" x2="400" y2="110" stroke="#0066cc" stroke-width="2" />
+  <line x1="350" y1="125" x2="400" y2="140" stroke="#0066cc" stroke-width="2" />
+  <circle cx="400" cy="60" r="4" class="sink" style="animation: pulse 2s infinite 1s;" />
+  <circle cx="400" cy="90" r="4" class="sink" style="animation: pulse 2s infinite 1.33s;" />
+  <circle cx="400" cy="110" r="4" class="sink" style="animation: pulse 2s infinite 1.66s;" />
+  <circle cx="400" cy="140" r="4" class="sink" style="animation: pulse 2s infinite 2s;" />
+  
+  <!-- Animated flow particles -->
+  <circle cx="0" cy="0" r="3" class="particle" style="offset-path: path('M 50 50 L 150 150 L 250 50'); animation: flowParticle1 3s infinite linear;" />
+  <circle cx="0" cy="0" r="3" class="particle" style="offset-path: path('M 150 150 L 300 150 L 450 50'); animation: flowParticle2 4s infinite linear 0.5s;" />
+  <circle cx="0" cy="0" r="3" class="particle" style="offset-path: path('M 150 150 L 300 150 L 450 250'); animation: flowParticle3 4s infinite linear 1s;" />
+  
+  <!-- Labels -->
+  <text x="50" y="280" font-size="12" text-anchor="middle" fill="#0066cc">Gen 1</text>
+  <text x="200" y="280" font-size="12" text-anchor="middle" fill="#0066cc">Gen 2</text>
+  <text x="400" y="280" font-size="12" text-anchor="middle" fill="#0066cc">Gen 3</text>
+  <text x="300" y="20" font-size="14" font-weight="bold" text-anchor="middle" fill="#00cc99">Network Evolution → Minimum Resistance</text>
+</svg>
 
-```
-GENERATION 1       →  GENERATION 2       →  GENERATION 3 (OPTIMAL)
-
-    ◊ source            ◊ source              ◊ source
-    │                   ├─ ─ ┬ ─ ─            ├─ ─ ┬ ─ ─
-    │                   │    │                ├─┐  ├─┐
-    ⬇                   ⬇    ⬇                ⬇  ⬇ ⬇  ⬇
-    ◊ sink              ◊ sink                ◊ sink
-
-  Random         Constrained         Optimized for
-  Network        Topology            Minimum Resistance
-```
+---
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Research](https://img.shields.io/badge/Research-Fluid%20Dynamics-cyan?style=for-the-badge)
