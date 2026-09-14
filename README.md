@@ -14,7 +14,7 @@
 >
 > — Adrian Bejan, Constructal Law (1997)
 
-## 🚀 Current Research
+##  Current Research
 
 <div align="center">
 
@@ -38,7 +38,7 @@ I investigate how **flow networks evolve** to minimize resistance under finite c
 - **Network Evolution** — Topological optimization, algorithms
 - **Extended Physics** — Thermal networks, mass transport
 
-## 💻 Featured Project
+## Featured Project
 
 <div align="center">
 
@@ -70,7 +70,7 @@ Overall: ████████████████████ 100% | Tes
 ═══════════════════════════════════════════════════════════════
 ```
 
-## 📊 Skills & Technologies
+##  Skills & Technologies
 
 <div align="center">
 
@@ -82,7 +82,7 @@ Overall: ████████████████████ 100% | Tes
 
 </div>
 
-### 💻 Languages & Libraries
+###  Languages & Libraries
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-Scientific-red?style=for-the-badge&logo=numpy)
@@ -90,7 +90,7 @@ Overall: ████████████████████ 100% | Tes
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-lightblue?style=for-the-badge)
 ![NetworkX](https://img.shields.io/badge/NetworkX-Graphs-green?style=for-the-badge)
 
-### 🔬 Core Expertise
+###  Core Expertise
 
 ```
 Numerical Methods
