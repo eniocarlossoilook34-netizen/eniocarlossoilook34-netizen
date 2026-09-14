@@ -20,10 +20,10 @@
 
 ```
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  Investigating Flow Network Evolution Under               ┃
-┃     Finite Geometric Constraints                          ┃
-┃                                                            ┃
-┃  Physics + Math + Computation = Network Optimization      ┃
+┃  Investigating Flow Network Evolution Under             ┃
+┃     Finite Geometric Constraints                        ┃
+┃                                                         ┃
+┃  Physics + Math + Computation = Network Optimization    ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
@@ -76,7 +76,7 @@ Overall: ████████████████████ 100% | Tes
 
 ```
 ╔═══════════════════════════════════════════════════════════╗
-║           🛠️  TECHNICAL SKILLSET  🛠️                    ║
+║           🛠️  TECHNICAL SKILLSET  🛠️                     ║
 ╚═══════════════════════════════════════════════════════════╝
 ```
 
@@ -144,13 +144,13 @@ Software Engineering
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║             ~~~  FLOW DYNAMICS RESEARCH  ~~~                    ║
+║             ~~~  FLOW DYNAMICS RESEARCH  ~~~                     ║ 
 ║                                                                  ║
 ║         🌊 Fluids in Motion                                     ║
 ║         ⚡ Networks in Evolution                                ║
 ║         💻 Physics in Code                                      ║
 ║                                                                  ║
-║    "Nature designs optimally to facilitate access to flow"      ║
+║    "Nature designs optimally to facilitate access to flow"       ║
 ║                   — Constructal Law                              ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
